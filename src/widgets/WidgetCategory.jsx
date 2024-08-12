@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-import "../pages/CodeEditor.css";
+import "./WidgetCategory.css";
+// import darkBlueTheme from "../constants/themeBlue";
 
 const WidgetCategory = ({ category, categoryName }) => {
   const [widgets, setWidgets] = useState([]);
@@ -32,8 +33,8 @@ const WidgetCategory = ({ category, categoryName }) => {
   };
 
   return (
-    <div className="editor-container">
-      <h1 className="section-title">{categoryName}</h1>
+    <div className="editor-container-widget">
+      <h1 className="section-title-widget">{categoryName}</h1>
       {widgets.length === 0 && <p>Loading widgets, please wait...</p>}
       {widgets.map((widget) => (
         <div key={widget._id} className="section">
@@ -43,10 +44,23 @@ const WidgetCategory = ({ category, categoryName }) => {
 
           <div className="section-content">
             <div className="image-column">
-              <img
+              {/* <img
                 src={widget.Image}
                 alt={widget.widgetName}
                 className="image"
+              /> */}
+              <img
+                src={
+                  widget.Image && widget.Image.startsWith("http")
+                    ? widget.Image
+                    : `https://nodejs-fyp-production.up.railway.app${widget.Image}`
+                }
+                alt={widget.widgetName}
+                className="image"
+                style={{ width: "auto", height: "auto" }}
+                onError={(e) =>
+                  (e.target.src = "../assets/default-fallback-image.png")
+                } // Fallback image
               />
             </div>
             <div className="code-column">
@@ -69,9 +83,16 @@ const WidgetCategory = ({ category, categoryName }) => {
                 <div className="code-container">
                   <SyntaxHighlighter
                     language="dart"
-                    style={{ ...hopscotch, fontSize: "10px", padding: "10px" }}
+                    style={{ ...nightOwl, fontSize: "8px", padding: "10px" }}
                     showLineNumbers
                     wrapLines
+                    wrapLongLines
+                    startingLineNumber={5}
+                    lineNumberStyle={{ color: "#999" }}
+                    customStyle={{
+                      backgroundColor: "#0c1422",
+                      borderRadius: "5px",
+                    }}
                   >
                     {widget.code}
                   </SyntaxHighlighter>

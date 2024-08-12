@@ -1,0 +1,100 @@
+.admin-container {
+  padding: 40px;
+  background: #f4f7fa;
+  min-height: 100vh;
+}
+
+.admin-title {
+  font-size: 35px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.widget-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.widget-info {
+  flex: 1;
+}
+
+.widget-name {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.widget-category,
+.widget-owner,
+.widget-status,
+.widget-date {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.widget-status {
+  font-weight: 600;
+}
+
+.widget-status.approved {
+  color: #28a745;
+}
+
+.widget-status.rejected {
+  color: #dc3545;
+}
+
+.widget-status.pending {
+  color: #ffc107;
+}
+
+.widget-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.action-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.approve-button {
+  background: #28a745;
+}
+
+.reject-button {
+  background: #dc3545;
+}
+
+.approve-button:hover {
+  background: #218838;
+}
+
+.reject-button:hover {
+  background: #c82333;
+}

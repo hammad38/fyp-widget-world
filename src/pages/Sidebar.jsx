@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
 import AllApps from "./AllApps";
-import Carousel from "./Carousel";
-import Card from "./Card";
 import Food from "./Food";
 import Covid from "./Covid";
 import Travel from "./Travel";
@@ -61,7 +59,7 @@ const Sidebar = () => {
           path="expansiontile"
           element={
             <WidgetCategory
-              category="expansiontile"
+              category="expansion tile"
               categoryName="Expansion Tile"
             />
           }
@@ -69,20 +67,20 @@ const Sidebar = () => {
         <Route
           path="listtile"
           element={
-            <WidgetCategory category="listtile" categoryName="List Tile" />
+            <WidgetCategory category="list tile" categoryName="List Tile" />
           }
         />
         <Route
           path="listview"
           element={
-            <WidgetCategory category="listview" categoryName="List View" />
+            <WidgetCategory category="list view" categoryName="List View" />
           }
         />
         <Route
           path="loadingindicator"
           element={
             <WidgetCategory
-              category="loadingindicator"
+              category="loading indicator"
               categoryName="Loading Indicator"
             />
           }
@@ -94,7 +92,7 @@ const Sidebar = () => {
         <Route
           path="navbar"
           element={
-            <WidgetCategory category="navbar" categoryName="Navigation Bar" />
+            <WidgetCategory category="nav bar" categoryName="Navigation Bar" />
           }
         />
         <Route
@@ -106,7 +104,7 @@ const Sidebar = () => {
         <Route
           path="searchbar"
           element={
-            <WidgetCategory category="searchbar" categoryName="Search Bar" />
+            <WidgetCategory category="search-bar" categoryName="Search Bar" />
           }
         />
         <Route
@@ -123,7 +121,7 @@ const Sidebar = () => {
           path="socialbuttons"
           element={
             <WidgetCategory
-              category="socialbuttons"
+              category="social buttons"
               categoryName="Social Buttons"
             />
           }
@@ -132,7 +130,7 @@ const Sidebar = () => {
           path="inputfields"
           element={
             <WidgetCategory
-              category="inputfields"
+              category="input fields"
               categoryName="Input Fields"
             />
           }

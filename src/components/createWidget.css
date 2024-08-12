@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.widget-2-container {
+  display: grid;
+  place-items: center;
+  background: #111827;
+  height: auto;
+  padding: 100px 0px;
+}
+
+.widget-2 {
+  width: 500px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.widget-4 {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+.widget-2 form {
+  padding: 20px 30px 50px 30px;
+}
+
+.widget-5 {
+  margin-top: 20px;
+  position: relative;
+}
+
+.widget-5 input,
+.widget-5 select,
+.widget-5 textarea {
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding-top: 20px; /* Adjusted padding to make room for label */
+}
+
+.widget-5 textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.widget-5 input:focus,
+.widget-5 select:focus,
+.widget-5 textarea:focus,
+.widget-5 input:valid,
+.widget-5 select:valid,
+.widget-5 textarea:valid {
+  /* border-color: #4158d0; */
+}
+
+.widget-5 label {
+  position: absolute;
+  top: -10px; /* Adjusted to be above the input by default */
+  left: 15px;
+  color: #4158d0;
+  font-weight: 500;
+  background: white;
+  padding: 0 5px;
+  font-size: 14px; /* Set default font size */
+  pointer-events: none;
+  border-radius: 25px;
+}
+
+.widget-5 input[type="submit"],
+button.create-widget {
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  /* margin-top: -10px; */
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease;
+  padding-bottom: 20px;
+}
+
+.widget-5 input[type="submit"]:active {
+  transform: scale(0.95);
+}
+
+.code-preview {
+  margin-top: 10px;
+}
+
+.image-uploader {
+  display: block !important;
+}
+
+input[type="file"] {
+  background: #121212;
+}
