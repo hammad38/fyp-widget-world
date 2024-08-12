@@ -99,6 +99,39 @@ const Sidebar = () => {
         </div>
 
         <div className="sidebar-menu">
+          <ul className="menu-list top-menu">
+            <small className="menu-title">Screens</small>
+            <li>
+              <NavLink to={"chat-ui"} className="menu-item">
+                <span>Chat App UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"food-ui"} className="menu-item">
+                <span>Food UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"covid-ui"} className="menu-item">
+                <span>Covid UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"travel-ui"} className="menu-item">
+                <span>Travel UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"quiz"} className="menu-item">
+                <span>Quiz UI</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"e-commerce-ui"} className="menu-item">
+                <span>E-commerce UI</span>
+              </NavLink>
+            </li>
+          </ul>
           <ul className="menu-list">
             <small className="menu-title">Widgets</small>
             <li>
@@ -204,55 +237,6 @@ const Sidebar = () => {
             <li>
               <NavLink to="animations" className="menu-item">
                 <span>Animations</span>
-              </NavLink>
-            </li>
-          </ul>
-          <ul className="menu-list">
-            <li>
-              <small className="menu-title">Screens</small>
-              <NavLink to={"chat-ui"} className="menu-item">
-                <span>Chat App UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"food-ui"} className="menu-item">
-                <span>Food UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"covid-ui"} className="menu-item">
-                <span>Covid UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"travel-ui"} className="menu-item">
-                <span>Travel UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"quiz"} className="menu-item">
-                <span>Quiz UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"e-commerce-ui"} className="menu-item">
-                <span>E-commerce UI</span>
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink to={"online-course"} className="menu-item">
-                <span>Online Course UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"online-course"} className="menu-item">
-                <span>Online Course UI</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"online-course"} className="menu-item">
-                <span>Online Course UI</span>
               </NavLink>
             </li>
           </ul>

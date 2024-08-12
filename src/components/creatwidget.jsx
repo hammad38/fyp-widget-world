@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthContext from "../context/AuthContext";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -44,7 +45,7 @@ const PublishWidget = () => {
           },
         }
       );
-      navigate("/");
+      navigate("/MyWidgets");
       alert("Widget created successfully and pending approval");
     } catch (error) {
       console.error(
@@ -56,6 +57,7 @@ const PublishWidget = () => {
   };
   return (
     <div className="widget-2-container">
+      <Header />
       <div className="widget-2">
         <div className="widget-4">Create Widget</div>
         <form onSubmit={handleSubmit}>

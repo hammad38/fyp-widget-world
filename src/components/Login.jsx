@@ -29,7 +29,7 @@ const Login = () => {
       if (userData.user.isAdmin) {
         navigate("/Admin");
       } else {
-        navigate("/");
+        navigate("/widgets");
       }
       alert("Login successful!");
     } catch (error) {

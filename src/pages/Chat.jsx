@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataChat } from "../constants/content";
-import './CodeEditor.css'; // Assuming you have this CSS file
+import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
   <div className="image-container">
@@ -28,10 +28,8 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-        <h1 className="section-title">Covid-19 UI</h1>
+      <h1 className="section-title">Chat UI</h1>
       <div className="images-row">
-
-
         {contentDataChat.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
@@ -40,7 +38,18 @@ const CodeEditor = () => {
       {/* Render description text */}
       <div className="description">
         <h2 className="description-title">About the UI</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>
+          This is a sleek and modern Chat App UI designed in Flutter. The
+          interface is clean and user-friendly, making it easy to connect and
+          communicate with others.
+        </p>
+        <h2 className="description-title">Features</h2>
+        <p>
+          Elegant and intuitive design Custom fonts for a unique look using the
+          google_fonts package High-quality SVG icons and images with the
+          flutter_svg package Download the Packages: You can download the
+          flutter_svg and google_fonts packages from <a href=""></a>pub.dev.
+        </p>
       </div>
 
       {/* Render each section with image and code */}
@@ -61,7 +70,10 @@ const CodeEditor = () => {
                 )}
                 <div className="code-header">
                   <span className="code-title">{content.title}</span>
-                  <CopyToClipboard text={content.code} onCopy={() => handleCopy(content.id)}>
+                  <CopyToClipboard
+                    text={content.code}
+                    onCopy={() => handleCopy(content.id)}
+                  >
                     <button className="copy-button">
                       <FiCopy />
                       <span>Copy Code</span>
@@ -71,7 +83,7 @@ const CodeEditor = () => {
                 <div className="code-container">
                   <SyntaxHighlighter
                     language="dart"
-                    style={{ ...hopscotch, fontSize: "10px", padding: "10px" }}
+                    style={{ ...nightOwl, fontSize: "10px", padding: "10px" }}
                     showLineNumbers
                     wrapLines
                   >

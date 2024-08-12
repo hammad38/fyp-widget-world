@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
 import "./adminWidgetList.css"; // Import the CSS file
+import Header from "./Header";
 
 const AdminWidgetList = () => {
   const { authData } = useContext(AuthContext);
@@ -60,6 +61,7 @@ const AdminWidgetList = () => {
 
   return (
     <div className="admin-container">
+      <Header />
       <h1 className="admin-title">Pending Widget Approvals</h1>
       <ul className="widget-list">
         {widgets.map((widget) => (

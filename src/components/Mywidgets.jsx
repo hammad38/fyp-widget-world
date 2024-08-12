@@ -3,6 +3,8 @@ import axios from "axios";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./myWidgets.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const MyWidgets = () => {
   const { authData } = useContext(AuthContext);
@@ -56,7 +58,10 @@ const MyWidgets = () => {
   };
 
   return (
+    // <Header />
     <div className="dashboard-container">
+      <Header />
+
       <h2 className="dashboard-title">My Widgets</h2>
       <div className="widgets-table">
         <div className="widgets-table-header">
@@ -70,7 +75,14 @@ const MyWidgets = () => {
         {widgets.map((widget) => (
           <div key={widget._id} className="widgets-table-row">
             <div className="row-item">{widget.widgetName}</div>
-            <div className="row-item">{widget.status}</div>
+            {/* <div className="row-item widget-status pending">
+              {widget.status}
+            </div> */}
+            <div
+              className={`widget-status row-item ${widget.status.toLowerCase()}`}
+            >
+              {widget.status}
+            </div>
             <div className="row-item">{widget.category}</div>
             <div className="row-item">
               <img
@@ -99,6 +111,10 @@ const MyWidgets = () => {
           </div>
         ))}
       </div>
+      <div className="explore-widget-mywidget">
+        <button>Explore More Widgets</button>
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 };
