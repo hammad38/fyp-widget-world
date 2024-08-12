@@ -28,7 +28,7 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-      <h1 className="section-title">Chat UI</h1>
+      <h1 className="section-title">Chat App UI</h1>
       <div className="images-row">
         {contentDataChat.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
@@ -48,7 +48,12 @@ const CodeEditor = () => {
           Elegant and intuitive design Custom fonts for a unique look using the
           google_fonts package High-quality SVG icons and images with the
           flutter_svg package Download the Packages: You can download the
-          flutter_svg and google_fonts packages from <a href=""></a>pub.dev.
+          flutter_svg and google_fonts packages from{" "}
+          <a href="https://pub.dev/" target="_blank">
+            {" "}
+            pub.dev
+          </a>
+          .
         </p>
       </div>
 

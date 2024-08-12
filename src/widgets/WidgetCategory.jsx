@@ -4,7 +4,7 @@ import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import "./WidgetCategory.css";
-// import darkBlueTheme from "../constants/themeBlue";
+import fallBackImage from "../assets/default-fallback-image.png";
 
 const WidgetCategory = ({ category, categoryName }) => {
   const [widgets, setWidgets] = useState([]);
@@ -44,11 +44,6 @@ const WidgetCategory = ({ category, categoryName }) => {
 
           <div className="section-content">
             <div className="image-column">
-              {/* <img
-                src={widget.Image}
-                alt={widget.widgetName}
-                className="image"
-              /> */}
               <img
                 src={
                   widget.Image && widget.Image.startsWith("http")
@@ -58,9 +53,13 @@ const WidgetCategory = ({ category, categoryName }) => {
                 alt={widget.widgetName}
                 className="image"
                 style={{ width: "auto", height: "auto" }}
-                onError={(e) =>
-                  (e.target.src = "../assets/default-fallback-image.png")
-                } // Fallback image
+                onError={(e) => {
+                  setTimeout(() => {
+                    e.target.onerror = null; // Prevent infinite loop
+                    e.target.src =
+                      "https://clarionhealthcare.com/wp-content/uploads/2020/12/default-fallback-image.png"; // Ensure this path is correct
+                  }, 100); // Add a small delay to prevent blinking
+                }}
               />
             </div>
             <div className="code-column">

@@ -2,15 +2,46 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import Header from "./Header";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+
+  const validate = () => {
+    const newErrors = {};
+
+    // Username validation
+    if (!username || username.length < 3) {
+      newErrors.username = "Username must be at least 3 characters long";
+    }
+
+    // Email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!email || !emailPattern.test(email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    // Password validation
+    if (!password || password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long";
+    }
+
+    return newErrors;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
     try {
       await axios.post(
         "https://nodejs-fyp-production.up.railway.app/register",
@@ -25,6 +56,7 @@ const Register = () => {
 
   return (
     <div className="wrapper-container">
+      <Header />
       <div className="wrapper">
         <div className="title">Register</div>
         <form onSubmit={handleSubmit} className="register-form">
@@ -37,6 +69,9 @@ const Register = () => {
               className="form-input"
             />
             <label>Username</label>
+            {errors.username && (
+              <span className="error-message">{errors.username}</span>
+            )}
           </div>
           <div className="field">
             <input
@@ -47,6 +82,9 @@ const Register = () => {
               className="form-input"
             />
             <label>Email Address</label>
+            {errors.email && (
+              <span className="error-message">{errors.email}</span>
+            )}
           </div>
           <div className="field">
             <input
@@ -57,6 +95,9 @@ const Register = () => {
               className="form-input"
             />
             <label>Password</label>
+            {errors.password && (
+              <span className="error-message">{errors.password}</span>
+            )}
           </div>
           <div className="field">
             <input type="submit" value="Register" />

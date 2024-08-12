@@ -60,7 +60,7 @@ export const navigation = [
   {
     id: "4",
     title: "Explore",
-    url: "explore",
+    url: "explore/chat-ui",
   },
   {
     id: "5",
@@ -87,7 +87,7 @@ export const brainwaveServices = [
   "Collection of 30+ screens",
   "150+ hand-crafted widgets",
   "No external libraries",
-  "100% flexible"
+  "100% flexible",
 ];
 
 export const brainwaveServicesIcons = [
@@ -221,7 +221,7 @@ export const pricing = [
     features: [
       "Widget Freedom: Access Free Tools for Your Needs",
       "Explore Diverse Design Styles for Creative Expression",
-      "Unlimited Storage for Your Digital Assets"
+      "Unlimited Storage for Your Digital Assets",
     ],
   },
   {

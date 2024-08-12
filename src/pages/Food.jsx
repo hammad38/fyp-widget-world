@@ -4,7 +4,7 @@ import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataFood } from "../constants/content";
-import './CodeEditor.css'; // Assuming you have this CSS file
+import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
   <div className="image-container">
@@ -28,10 +28,8 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-        <h1 className="section-title">Food UI</h1>
+      <h1 className="section-title">Food UI</h1>
       <div className="images-row">
-
-
         {contentDataFood.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
@@ -39,8 +37,19 @@ const CodeEditor = () => {
 
       {/* Render description text */}
       <div className="description">
-        <h2 className="description-title">About the UI</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h2 className="description-title">Healthy Food UI</h2>
+        <p>
+          This is a clean and modern Healthy Food UI designed in Flutter. The
+          interface prominently features a circular progress bar to visually
+          represent nutritional goals or progress.
+        </p>
+        <h2 className="description-title">Features:</h2>
+        <p>
+          Interactive and user-friendly design Dynamic circular progress bar
+          using the simple_circular_progress_bar package Download the Package:
+          You can download the simple_circular_progress_bar package from
+          pub.dev.{" "}
+        </p>
       </div>
 
       {/* Render each section with image and code */}
@@ -61,7 +70,10 @@ const CodeEditor = () => {
                 )}
                 <div className="code-header">
                   <span className="code-title">{content.title}</span>
-                  <CopyToClipboard text={content.code} onCopy={() => handleCopy(content.id)}>
+                  <CopyToClipboard
+                    text={content.code}
+                    onCopy={() => handleCopy(content.id)}
+                  >
                     <button className="copy-button">
                       <FiCopy />
                       <span>Copy Code</span>

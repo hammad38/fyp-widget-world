@@ -36,35 +36,38 @@
 
 // export default AuthContext;
 
-
 // src/context/AuthContext.js
-import React, { createContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const storedAuth = localStorage.getItem('authData');
-  const [authData, setAuthData] = useState(storedAuth ? JSON.parse(storedAuth) : null);
+  const storedAuth = localStorage.getItem("authData");
+  const [authData, setAuthData] = useState(
+    storedAuth ? JSON.parse(storedAuth) : null
+  );
   const navigate = useNavigate();
 
   const updateAuthData = (data) => {
     setAuthData(data);
     if (data) {
-      localStorage.setItem('authData', JSON.stringify(data));
+      localStorage.setItem("authData", JSON.stringify(data));
     } else {
-      localStorage.removeItem('authData');
+      localStorage.removeItem("authData");
     }
   };
 
   const logout = () => {
     setAuthData(null);
-    localStorage.removeItem('authData');
-    navigate('/');
+    localStorage.removeItem("authData");
+    navigate("/");
   };
 
   return (
-    <AuthContext.Provider value={{ authData, setAuthData: updateAuthData, logout }}>
+    <AuthContext.Provider
+      value={{ authData, setAuthData: updateAuthData, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );

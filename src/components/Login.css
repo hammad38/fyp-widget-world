@@ -1,10 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 .wrapper-container {
   display: grid;
   height: 100vh;
@@ -132,4 +125,23 @@ form .signup-link a {
 form .pass-link a:hover,
 form .signup-link a:hover {
   text-decoration: underline;
+}
+
+.error-message {
+  color: #d32f2f; /* Use a shade of red that is not too harsh */
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 20px; /* Align with the padding of input fields */
+  display: block;
+  font-weight: 500; /* Match the form's font weight */
+  transition: all 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Adjust spacing when error messages are present */
+.wrapper form .field {
+  margin-bottom: 10px; /* Ensure spacing between fields when errors are shown */
+}
+
+.wrapper form .field:last-child {
+  margin-bottom: 0; /* No margin for the last field */
 }

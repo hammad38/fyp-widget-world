@@ -4,7 +4,7 @@ import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataCovid } from "../constants/content";
-import './CodeEditor.css'; // Assuming you have this CSS file
+import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
   <div className="image-container">
@@ -28,10 +28,8 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-        <h1 className="section-title">Covid-19 UI</h1>
+      <h1 className="section-title">COVID-19 Tracker UI</h1>
       <div className="images-row">
-
-
         {contentDataCovid.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
@@ -40,7 +38,18 @@ const CodeEditor = () => {
       {/* Render description text */}
       <div className="description">
         <h2 className="description-title">About the UI</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>
+          This is an informative COVID-19 Tracker UI designed in Flutter. The
+          interface clearly displays the number of infected, deaths, and
+          recovered cases, making it easy to track the impact of the pandemic.
+        </p>
+        <h2 className="description-title">Features:</h2>
+        <p>
+          Real-time data display for infected, deaths, and recovered cases Clean
+          and simple design using the flutter_svg package for high-quality SVG
+          images Download the Package: You can download the flutter_svg package
+          from pub.dev.
+        </p>
       </div>
 
       {/* Render each section with image and code */}
@@ -61,7 +70,10 @@ const CodeEditor = () => {
                 )}
                 <div className="code-header">
                   <span className="code-title">{content.title}</span>
-                  <CopyToClipboard text={content.code} onCopy={() => handleCopy(content.id)}>
+                  <CopyToClipboard
+                    text={content.code}
+                    onCopy={() => handleCopy(content.id)}
+                  >
                     <button className="copy-button">
                       <FiCopy />
                       <span>Copy Code</span>

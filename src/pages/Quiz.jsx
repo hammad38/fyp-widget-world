@@ -4,7 +4,7 @@ import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataQuiz } from "../constants/content";
-import './CodeEditor.css'; // Assuming you have this CSS file
+import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
   <div className="image-container">
@@ -28,10 +28,8 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-        <h1 className="section-title">Quiz UI</h1>
+      <h1 className="section-title">Quiz App UI</h1>
       <div className="images-row">
-
-
         {contentDataQuiz.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
@@ -40,7 +38,20 @@ const CodeEditor = () => {
       {/* Render description text */}
       <div className="description">
         <h2 className="description-title">About the UI</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>
+          This is an engaging Quiz App designed in Flutter, where users can
+          enter their name and start playing quizzes instantly. Each quiz is
+          timed, adding an element of challenge, and users also have the option
+          to skip questions.
+        </p>
+        <h2 className="description-title">Features:</h2>
+        <p>
+          User-friendly interface with personalized quiz experience Timer for
+          each quiz to enhance excitement Skip option for tricky questions
+          Efficient state management with the get package High-quality images
+          using the flutter_svg package Download the Packages: You can download
+          the get and flutter_svg packages from pub.dev.
+        </p>
       </div>
 
       {/* Render each section with image and code */}
@@ -61,7 +72,10 @@ const CodeEditor = () => {
                 )}
                 <div className="code-header">
                   <span className="code-title">{content.title}</span>
-                  <CopyToClipboard text={content.code} onCopy={() => handleCopy(content.id)}>
+                  <CopyToClipboard
+                    text={content.code}
+                    onCopy={() => handleCopy(content.id)}
+                  >
                     <button className="copy-button">
                       <FiCopy />
                       <span>Copy Code</span>

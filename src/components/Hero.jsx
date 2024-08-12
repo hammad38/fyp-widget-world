@@ -36,10 +36,11 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-            Unleash the potential of Widget World. Elevate your productivity with Widget World, 
-            the cutting-edge application designed for seamless integration into your development workflow.
+            Unleash the potential of Widget World. Elevate your productivity
+            with Widget World, the cutting-edge application designed for
+            seamless integration into your development workflow.
           </p>
-          <Button href="/pricing" white>
+          <Button href="/explore/chat-ui" white>
             Get started
           </Button>
         </div>

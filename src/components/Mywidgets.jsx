@@ -4,7 +4,6 @@ import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./myWidgets.css";
 import Header from "./Header";
-import Footer from "./Footer";
 
 const MyWidgets = () => {
   const { authData } = useContext(AuthContext);
@@ -111,9 +110,9 @@ const MyWidgets = () => {
           </div>
         ))}
       </div>
-      <div className="explore-widget-mywidget">
+      {/* <div className="explore-widget-mywidget">
         <button>Explore More Widgets</button>
-      </div>
+      </div> */}
       {/* <Footer /> */}
     </div>
   );

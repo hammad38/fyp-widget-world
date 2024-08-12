@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthContext from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import Header from "./Header";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -40,6 +41,7 @@ const Login = () => {
 
   return (
     <div className="wrapper-container">
+      <Header />
       <div className="wrapper">
         <div className="title">Login Form</div>
         <form onSubmit={handleSubmit} className="login-form">

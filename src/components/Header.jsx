@@ -1,4 +1,5 @@
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import { widgetworld, logo1 } from "../assets";
@@ -7,9 +8,44 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import AuthContext from "../context/AuthContext";
+
 // import Publish from '
 
 const Header = () => {
+  const { authData, logout } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleClick1 = () => {
+    if (location.pathname === "/widgets") {
+      navigate("/myWidgets");
+    } else if (location.pathname === "/myWidgets") {
+      navigate("/widgets");
+    }
+  };
+
+  const getButtonText = () => {
+    if (location.pathname === "/Admin") {
+      return "Pending Widget Approvals";
+    } else if (location.pathname === "/widgets") {
+      return "My Widgets";
+    } else if (location.pathname === "/myWidgets") {
+      return "Widgets";
+    }
+    return "Publish Widget"; // default text
+  };
+
+  const getButtonLink = () => {
+    if (location.pathname === "/Admin") {
+      return null;
+    } else if (location.pathname === "/widgets") {
+      return "/myWidgets";
+    } else if (location.pathname === "/myWidgets") {
+      return "/widgets";
+    }
+    return "/widgets"; // default link
+  };
   const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
 
@@ -68,16 +104,29 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <a
-          href="/register"
-          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+        {authData ? (
+          <a
+            href="/"
+            onClick={logout}
+            className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          >
+            Logout
+          </a>
+        ) : (
+          <a
+            href="/login"
+            className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          >
+            Login
+          </a>
+        )}
+        <Button
+          className="hidden lg:flex"
+          href={getButtonLink()}
+          onClick={handleClick}
         >
-          New account
-        </a>
-        <Button className="hidden lg:flex" href="/widgets">
-          Publish Widget
+          {getButtonText()}
         </Button>
-
         <Button
           className="ml-auto lg:hidden"
           px="px-3"

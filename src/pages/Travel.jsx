@@ -4,7 +4,7 @@ import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataTravel } from "../constants/content";
-import './CodeEditor.css'; // Assuming you have this CSS file
+import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
   <div className="image-container">
@@ -28,10 +28,8 @@ const CodeEditor = () => {
   return (
     <div className="editor-container">
       {/* Render all images at the top */}
-        <h1 className="section-title">Covid-19 UI</h1>
+      <h1 className="section-title">Travel App UI</h1>
       <div className="images-row">
-
-
         {contentDataTravel.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
@@ -40,7 +38,19 @@ const CodeEditor = () => {
       {/* Render description text */}
       <div className="description">
         <h2 className="description-title">About the UI</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>
+          This is a beautifully designed Travel App UI created in Flutter. The
+          interface is tailored for travelers, offering a seamless experience
+          with stunning visuals and well-organized information.
+        </p>
+        <h2 className="description-title">Features:</h2>
+        <p>
+          Elegant and responsive design Date and time formatting using the intl
+          package Custom fonts for a unique and modern look with the
+          google_fonts package High-quality SVG icons and images using the
+          flutter_svg package Download the Packages: You can download the intl,
+          flutter_svg, and google_fonts packages from pub.dev.
+        </p>
       </div>
 
       {/* Render each section with image and code */}
@@ -61,7 +71,10 @@ const CodeEditor = () => {
                 )}
                 <div className="code-header">
                   <span className="code-title">{content.title}</span>
-                  <CopyToClipboard text={content.code} onCopy={() => handleCopy(content.id)}>
+                  <CopyToClipboard
+                    text={content.code}
+                    onCopy={() => handleCopy(content.id)}
+                  >
                     <button className="copy-button">
                       <FiCopy />
                       <span>Copy Code</span>

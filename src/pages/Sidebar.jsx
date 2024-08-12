@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
-import AllApps from "./AllApps";
+import Shop from "./Shop";
 import Food from "./Food";
 import Covid from "./Covid";
 import Travel from "./Travel";
 import Quiz from "./Quiz";
-import Crypto from "./Chat";
+import Chat from "./Chat";
 
 // widgets import
 import WidgetCategory from "../widgets/WidgetCategory";
@@ -143,8 +143,8 @@ const Sidebar = () => {
         />
 
         {/* screens */}
-        <Route path="chat-ui" element={<Crypto />} />
-        <Route path="e-commerce-ui" element={<AllApps />} />
+        <Route path="chat-ui" element={<Chat />} />
+        <Route path="e-commerce-ui" element={<Shop />} />
         <Route path="food-ui" element={<Food />} />
         <Route path="covid-ui" element={<Covid />} />
         <Route path="travel-ui" element={<Travel />} />

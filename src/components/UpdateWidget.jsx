@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import AuthContext from "../context/AuthContext";
 import "./createWidget.css"; // Import the CSS file
+import Header from "./Header";
 
 const UpdateWidget = () => {
   const { id } = useParams();
@@ -78,6 +79,7 @@ const UpdateWidget = () => {
 
   return (
     <div className="widget-2-container">
+      <Header />
       <div className="widget-2">
         <div className="widget-4">Update Widget</div>
         <form onSubmit={handleUpdateWidget}>
