@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
-import { contentDataChat } from "../constants/content";
+import { contentDataShop } from "../constants/content";
 import "./CodeEditor.css"; // Assuming you have this CSS file
 
 const ImageComponent = ({ src }) => (
@@ -30,7 +30,7 @@ const CodeEditor = () => {
       {/* Render all images at the top */}
       <h1 className="section-title">Shop App UI</h1>
       <div className="images-row">
-        {contentDataChat.map((content) => (
+        {contentDataShop.map((content) => (
           <ImageComponent key={content.id} src={content.image} />
         ))}
       </div>
@@ -53,7 +53,7 @@ const CodeEditor = () => {
       </div>
 
       {/* Render each section with image and code */}
-      {contentDataChat.map((content) => (
+      {contentDataShop.map((content) => (
         <div key={content.id} className="section">
           <div className="section-header">
             <h1 className="section-title">{content.title}</h1>
@@ -83,7 +83,7 @@ const CodeEditor = () => {
                 <div className="code-container">
                   <SyntaxHighlighter
                     language="dart"
-                    style={{ ...hopscotch, fontSize: "10px", padding: "10px" }}
+                    style={{ ...nightOwl, fontSize: "10px", padding: "10px" }}
                     showLineNumbers
                     wrapLines
                   >

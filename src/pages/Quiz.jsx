@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { hopscotch } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FiCopy } from "react-icons/fi";
 import { contentDataQuiz } from "../constants/content";
@@ -85,7 +85,7 @@ const CodeEditor = () => {
                 <div className="code-container">
                   <SyntaxHighlighter
                     language="dart"
-                    style={{ ...hopscotch, fontSize: "10px", padding: "10px" }}
+                    style={{ ...nightOwl, fontSize: "10px", padding: "10px" }}
                     showLineNumbers
                     wrapLines
                   >
