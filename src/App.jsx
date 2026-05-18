@@ -14,7 +14,7 @@ import UpdateWidget from "./components/UpdateWidget";
 import MyWidgets from "./components/Mywidgets";
 import AdminRoute from "./components/AdminRoute";
 
-// import Explore from "./pages/Explore"
+// import Explore from "./pages/Explore";
 
 const App = () => {
   return (
